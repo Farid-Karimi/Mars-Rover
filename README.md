@@ -2,8 +2,6 @@
 
 ## Overview
 This project simulates a Mars rover navigating a grid-based map using first-order logic principles. The rover must explore the map, avoid hazards (pits and obstacles), and collect items (stars) while making decisions based on its sensor data and exploration history.
-
-
 ## Modeling to First-Order Logic
 
 ### 1. **Grid Representation**
@@ -12,7 +10,7 @@ The map is modeled as a 2D grid where each cell can contain:
 - **Obstacles**: Blocking structures the rover cannot pass through.
 - **Items**: Collectible stars the rover should prioritize.
 - **Explored/Unexplored**: Tracks whether the rover has visited a cell.
-- **Sensed**: Indicates whether the rover has detected the cell's contents.
+- **Sensed**: Indicates whether the rover has detected the cell's contents around itself.
 
 Each cell is represented as a tuple `(x, y)` with properties:
 - `pit(x, y)`: True if the cell contains a pit.
@@ -23,7 +21,6 @@ Each cell is represented as a tuple `(x, y)` with properties:
 
 ### 2. **First-Order Logic Rules**
 The rover's decision-making is based on logical rules implemented in the `LogicEngine` class. These rules are derived from first-order logic principles:
-
 #### a. **Safe Movement**
 A cell is safe to move into if:
 - It has been sensed.
@@ -79,21 +76,17 @@ The `LogicEngine` class implements the decision-making logic for the rover. It u
   ```
 
 ## Movement Strategy
-
 The rover's movement is guided by the following strategy:
 
 ### 1. **Item Collection**
 - The rover prioritizes moving toward uncollected items within its sensed area.
 - Once an item is collected, it is marked as `collected` and no longer prioritized.
-
 ### 2. **Exploration**
 - If no items are available, the rover explores unexplored cells.
 - It avoids revisiting recently visited cells to prevent loops.
-
 ### 3. **Backtracking**
 - If the rover reaches a dead end, it backtracks to the last safe position.
 - Backtracking ensures the rover can continue exploring other areas.
-
 ### 4. **Sensor Updates**
 - The rover's sensors detect adjacent cells (3x3 area around its position).
 - Sensor data is used to update the `sensed` property of cells.
@@ -103,20 +96,17 @@ The rover's movement is guided by the following strategy:
 1. **Initial State**:
    - Rover at `(0, 0)`.
    - Adjacent cells sensed: `(0, 1)`, `(1, 0)`, `(1, 1)`.
-
 2. **Item Detection**:
    - If `(1, 1)` contains an uncollected item, move to `(1, 1)`.
-
 3. **Exploration**:
    - If no items are detected, move to the nearest unexplored cell.
-
 4. **Dead End**:
    - If no safe moves are available, backtrack to the last safe position.
 
 ## Visualization
 
 The game uses Pygame to visualize the grid, rover, and map elements:
-- **Rover**: Represented as a car-like icon with wheels and a body.
+- **Rover**: Represented as a car-like icon with 4 wheels and a body.
 - **Items**: Stars that change appearance when collected.
 - **Pits**: Red circles indicating dangerous areas.
 - **Obstacles**: Gray rectangles representing blocking structures.
@@ -128,4 +118,3 @@ This project demonstrates how first-order logic can be applied to model decision
 This approach can be extended to more complex scenarios, such as:
 - Multi-agent systems with multiple rovers.
 - Dynamic environments with moving obstacles.
-- Advanced pathfinding algorithms (e.g., A* or Dijkstra's).
