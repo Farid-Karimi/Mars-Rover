@@ -4,7 +4,7 @@
 
 <img align="right" width="200" height="200" src="https://github.com/user-attachments/assets/02bc32ae-4e78-4238-85b5-818d63efa4ba">
 
-This project simulates a Mars rover navigating a grid-based map using first-order logic principles. <br/>
+This project simulates a Mars rover navigating a grid-based map using first-order logic principles.
 The rover must explore the map, avoid hazards (pits and obstacles), and collect items (stars) while making decisions based on its sensor data and exploration history.
 
 <br clear="right"/>
