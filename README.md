@@ -1,7 +1,17 @@
 # Mars Rover Exploration Game
 
 ## Overview
-This project simulates a Mars rover navigating a grid-based map using first-order logic principles. The rover must explore the map, avoid hazards (pits and obstacles), and collect items (stars) while making decisions based on its sensor data and exploration history.
+
+<img src="https://github.com/user-attachments/assets/02bc32ae-4e78-4238-85b5-818d63efa4ba" align="left" width="200px"/>
+<p style="margin-left: 20px; text-indent: 40px;">
+    &nbsp This project simulates a Mars rover navigating a grid-based map using first-order logic principles. <br/>
+    &nbsp The rover must explore the map, avoid hazards (pits and obstacles), and collect items (stars) while <br/>
+    &nbsp making decisions based on its sensor data and exploration history.
+</p>
+<br clear="left"/>
+
+
+
 ## Modeling to First-Order Logic
 
 ### 1. **Grid Representation**
